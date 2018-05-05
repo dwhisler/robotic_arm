@@ -1,0 +1,1596 @@
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	__aeabi_i2f
+  20              		.global	__aeabi_fcmplt
+  21              		.global	__aeabi_f2iz
+  22              		.global	__aeabi_fcmpgt
+  23              		.global	__aeabi_fsub
+  24              		.global	__aeabi_fdiv
+  25              		.global	__aeabi_fmul
+  26              		.global	__aeabi_fadd
+  27              		.global	__aeabi_f2d
+  28              		.global	__aeabi_dmul
+  29              		.global	__aeabi_dsub
+  30              		.global	__aeabi_d2f
+  31              		.section	.text.main,"ax",%progbits
+  32              		.align	2
+  33              		.global	main
+  34              		.code	16
+  35              		.thumb_func
+  36              		.type	main, %function
+  37              	main:
+  38              	.LFB33:
+  39              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include <stdio.h>
+  14:main.c        **** 
+  15:main.c        **** char str[200];
+  16:main.c        **** 
+  17:main.c        **** int potVal[4];
+  18:main.c        **** int rawPotVal[4];
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 2
+
+
+  19:main.c        **** int servoDuty[4];
+  20:main.c        **** int servoHighLimit[4] = {4700, 4670, 4900, 4900};
+  21:main.c        **** int servoLowLimit[4] = {4300,4250,4100,4100};
+  22:main.c        **** float servoDutyPer[4];
+  23:main.c        **** //int potVal;
+  24:main.c        **** //int rawPotVal;
+  25:main.c        **** //int servoDuty;
+  26:main.c        **** //int potVal_1;
+  27:main.c        **** //int rawPotVal_1;
+  28:main.c        **** //int servoDuty_1;
+  29:main.c        **** //float servoHighLimit = 4700;
+  30:main.c        **** //float servoLowLimit = 4300;
+  31:main.c        **** //float servoHighLimit_1 = 4670;
+  32:main.c        **** //float servoLowLimit_1 = 4250;
+  33:main.c        **** float potHighLimit = 1300;
+  34:main.c        **** float potLowLimit = 0;
+  35:main.c        **** int first = 0;
+  36:main.c        **** int i = 0;
+  37:main.c        **** 
+  38:main.c        **** int main(void)
+  39:main.c        **** {
+  40              		.loc 1 39 0
+  41              		.cfi_startproc
+  42              		@ Volatile: function does not return.
+  43              		@ args = 0, pretend = 0, frame = 8
+  44              		@ frame_needed = 0, uses_anonymous_args = 0
+  45 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  46              		.cfi_def_cfa_offset 20
+  47              		.cfi_offset 4, -20
+  48              		.cfi_offset 5, -16
+  49              		.cfi_offset 6, -12
+  50              		.cfi_offset 7, -8
+  51              		.cfi_offset 14, -4
+  52 0002 5F46     		mov	r7, fp
+  53 0004 5646     		mov	r6, r10
+  54 0006 4D46     		mov	r5, r9
+  55 0008 4446     		mov	r4, r8
+  56 000a F0B4     		push	{r4, r5, r6, r7}
+  57              		.cfi_def_cfa_offset 36
+  58              		.cfi_offset 8, -36
+  59              		.cfi_offset 9, -32
+  60              		.cfi_offset 10, -28
+  61              		.cfi_offset 11, -24
+  62 000c 95B0     		sub	sp, sp, #84
+  63              		.cfi_def_cfa_offset 120
+  40:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  64              		.loc 1 40 0
+  65              		.syntax divided
+  66              	@ 40 "main.c" 1
+  67 000e 62B6     		CPSIE   i
+  68              	@ 0 "" 2
+  41:main.c        ****     UART_Start();
+  69              		.loc 1 41 0
+  70              		.thumb
+  71              		.syntax unified
+  72 0010 FFF7FEFF 		bl	UART_Start
+  73              	.LVL0:
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 3
+
+
+  42:main.c        ****     
+  43:main.c        ****     // Start ADC    
+  44:main.c        ****     ADC_Start();
+  74              		.loc 1 44 0
+  75 0014 FFF7FEFF 		bl	ADC_Start
+  76              	.LVL1:
+  45:main.c        ****     ADC_StartConvert(); //always poll ADC continuously
+  77              		.loc 1 45 0
+  78 0018 FFF7FEFF 		bl	ADC_StartConvert
+  79              	.LVL2:
+  46:main.c        ****     
+  47:main.c        ****     // Start PWM for J1
+  48:main.c        ****     PWM_1_Start();
+  80              		.loc 1 48 0
+  81 001c FFF7FEFF 		bl	PWM_1_Start
+  82              	.LVL3:
+  49:main.c        ****     // Start PWM for J2
+  50:main.c        ****     PWM_2_Start();
+  83              		.loc 1 50 0
+  84 0020 FFF7FEFF 		bl	PWM_2_Start
+  85              	.LVL4:
+  51:main.c        ****     // Start PWM for J3
+  52:main.c        ****     PWM_3_Start();
+  86              		.loc 1 52 0
+  87 0024 FFF7FEFF 		bl	PWM_3_Start
+  88              	.LVL5:
+  53:main.c        ****     // Start PWM for J4
+  54:main.c        ****     PWM_4_Start();
+  89              		.loc 1 54 0
+  90 0028 FFF7FEFF 		bl	PWM_4_Start
+  91              	.LVL6:
+  55:main.c        ****     //PWM_WritePeriod(65300u);
+  56:main.c        ****     //PWM_WriteCompare(32650u);
+  57:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  58:main.c        ****     CyDelay(500);
+  92              		.loc 1 58 0
+  93 002c FA20     		movs	r0, #250
+  94 002e 4000     		lsls	r0, r0, #1
+  95 0030 FFF7FEFF 		bl	CyDelay
+  96              	.LVL7:
+  59:main.c        ****     UART_UartPutString("Arm Test v1.0\r\n");
+  97              		.loc 1 59 0
+  98 0034 7F48     		ldr	r0, .L19
+  99 0036 FFF7FEFF 		bl	UART_UartPutString
+ 100              	.LVL8:
+  60:main.c        ****     UART_UartPutString("Author: Amar Bhatt\r\n\r\n");
+ 101              		.loc 1 60 0
+ 102 003a 7F48     		ldr	r0, .L19+4
+ 103 003c FFF7FEFF 		bl	UART_UartPutString
+ 104              	.LVL9:
+ 105              	.L14:
+  61:main.c        ****     
+  62:main.c        ****     for(;;)
+  63:main.c        ****     {
+  64:main.c        ****         /* Place your application code here. */
+  65:main.c        ****         if(first == 1) {
+ 106              		.loc 1 65 0
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 4
+
+
+ 107 0040 7E4B     		ldr	r3, .L19+8
+ 108 0042 1B68     		ldr	r3, [r3]
+ 109 0044 012B     		cmp	r3, #1
+ 110 0046 02D1     		bne	.L2
+  66:main.c        ****             UART_UartPutString("\r\033[A\33[2K \r\033[A\33[2K \r\033[A\33[2K \r\033[A\33[2K \r");//
+ 111              		.loc 1 66 0
+ 112 0048 7D48     		ldr	r0, .L19+12
+ 113 004a FFF7FEFF 		bl	UART_UartPutString
+ 114              	.LVL10:
+ 115              	.L2:
+  67:main.c        ****         }
+  68:main.c        ****         // Read pot values for J1, J2, J3, J4
+  69:main.c        ****         rawPotVal[0] = ADC_GetResult16(0);
+ 116              		.loc 1 69 0
+ 117 004e 0020     		movs	r0, #0
+ 118 0050 FFF7FEFF 		bl	ADC_GetResult16
+ 119              	.LVL11:
+ 120 0054 7B4C     		ldr	r4, .L19+16
+ 121 0056 2060     		str	r0, [r4]
+  70:main.c        ****         rawPotVal[1] = ADC_GetResult16(1);  
+ 122              		.loc 1 70 0
+ 123 0058 0120     		movs	r0, #1
+ 124 005a FFF7FEFF 		bl	ADC_GetResult16
+ 125              	.LVL12:
+ 126 005e 6060     		str	r0, [r4, #4]
+  71:main.c        ****         rawPotVal[2] = ADC_GetResult16(2);  
+ 127              		.loc 1 71 0
+ 128 0060 0220     		movs	r0, #2
+ 129 0062 FFF7FEFF 		bl	ADC_GetResult16
+ 130              	.LVL13:
+ 131 0066 A060     		str	r0, [r4, #8]
+  72:main.c        ****         rawPotVal[3] = ADC_GetResult16(3); 
+ 132              		.loc 1 72 0
+ 133 0068 0320     		movs	r0, #3
+ 134 006a FFF7FEFF 		bl	ADC_GetResult16
+ 135              	.LVL14:
+ 136 006e 8346     		mov	fp, r0
+ 137 0070 E060     		str	r0, [r4, #12]
+  73:main.c        ****         
+  74:main.c        ****         // Adjust based on min and max
+  75:main.c        ****         for(i = 0; i<4;i++){
+ 138              		.loc 1 75 0
+ 139 0072 0022     		movs	r2, #0
+ 140 0074 714B     		ldr	r3, .L19+8
+ 141 0076 5A60     		str	r2, [r3, #4]
+ 142 0078 29E0     		b	.L3
+ 143              	.L9:
+  76:main.c        ****             if (rawPotVal[i] < potLowLimit) {
+ 144              		.loc 1 76 0
+ 145 007a A300     		lsls	r3, r4, #2
+ 146 007c 714A     		ldr	r2, .L19+16
+ 147 007e 9F58     		ldr	r7, [r3, r2]
+ 148 0080 3800     		movs	r0, r7
+ 149 0082 FFF7FEFF 		bl	__aeabi_i2f
+ 150              	.LVL15:
+ 151 0086 051C     		adds	r5, r0, #0
+ 152 0088 6C4B     		ldr	r3, .L19+8
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 5
+
+
+ 153 008a 9E68     		ldr	r6, [r3, #8]
+ 154 008c 311C     		adds	r1, r6, #0
+ 155 008e FFF7FEFF 		bl	__aeabi_fcmplt
+ 156              	.LVL16:
+ 157 0092 0028     		cmp	r0, #0
+ 158 0094 06D0     		beq	.L17
+  77:main.c        ****                 potVal[i] = potLowLimit;
+ 159              		.loc 1 77 0
+ 160 0096 A500     		lsls	r5, r4, #2
+ 161 0098 301C     		adds	r0, r6, #0
+ 162 009a FFF7FEFF 		bl	__aeabi_f2iz
+ 163              	.LVL17:
+ 164 009e 6A4B     		ldr	r3, .L19+20
+ 165 00a0 E850     		str	r0, [r5, r3]
+ 166 00a2 11E0     		b	.L6
+ 167              	.L17:
+  78:main.c        ****             } else if (rawPotVal[i] > potHighLimit){
+ 168              		.loc 1 78 0
+ 169 00a4 694B     		ldr	r3, .L19+24
+ 170 00a6 1E68     		ldr	r6, [r3]
+ 171 00a8 311C     		adds	r1, r6, #0
+ 172 00aa 281C     		adds	r0, r5, #0
+ 173 00ac FFF7FEFF 		bl	__aeabi_fcmpgt
+ 174              	.LVL18:
+ 175 00b0 0028     		cmp	r0, #0
+ 176 00b2 06D0     		beq	.L18
+  79:main.c        ****                 potVal[i] = potHighLimit;
+ 177              		.loc 1 79 0
+ 178 00b4 A500     		lsls	r5, r4, #2
+ 179 00b6 301C     		adds	r0, r6, #0
+ 180 00b8 FFF7FEFF 		bl	__aeabi_f2iz
+ 181              	.LVL19:
+ 182 00bc 624B     		ldr	r3, .L19+20
+ 183 00be E850     		str	r0, [r5, r3]
+ 184 00c0 02E0     		b	.L6
+ 185              	.L18:
+  80:main.c        ****             } else {
+  81:main.c        ****                 potVal[i] = rawPotVal[i];
+ 186              		.loc 1 81 0
+ 187 00c2 A300     		lsls	r3, r4, #2
+ 188 00c4 604A     		ldr	r2, .L19+20
+ 189 00c6 9F50     		str	r7, [r3, r2]
+ 190              	.L6:
+  75:main.c        ****             if (rawPotVal[i] < potLowLimit) {
+ 191              		.loc 1 75 0 discriminator 2
+ 192 00c8 0134     		adds	r4, r4, #1
+ 193 00ca 5C4B     		ldr	r3, .L19+8
+ 194 00cc 5C60     		str	r4, [r3, #4]
+ 195              	.L3:
+  75:main.c        ****             if (rawPotVal[i] < potLowLimit) {
+ 196              		.loc 1 75 0 is_stmt 0 discriminator 1
+ 197 00ce 5B4B     		ldr	r3, .L19+8
+ 198 00d0 5C68     		ldr	r4, [r3, #4]
+ 199 00d2 032C     		cmp	r4, #3
+ 200 00d4 D1DD     		ble	.L9
+  82:main.c        ****             }       
+  83:main.c        ****         
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 6
+
+
+  84:main.c        ****         }
+  85:main.c        ****         
+  86:main.c        ****         //Find Servo Duty Count
+  87:main.c        ****         
+  88:main.c        ****         for (i=0;i<4;i++){
+ 201              		.loc 1 88 0 is_stmt 1
+ 202 00d6 0022     		movs	r2, #0
+ 203 00d8 5A60     		str	r2, [r3, #4]
+ 204 00da 2DE0     		b	.L10
+ 205              	.L11:
+  89:main.c        ****             servoDuty[i] = (potVal[i]-potLowLimit)*((servoHighLimit[i]-servoLowLimit[i])/(potHighLi
+ 206              		.loc 1 89 0 discriminator 3
+ 207 00dc A500     		lsls	r5, r4, #2
+ 208 00de 5A4B     		ldr	r3, .L19+20
+ 209 00e0 E858     		ldr	r0, [r5, r3]
+ 210 00e2 564F     		ldr	r7, .L19+8
+ 211 00e4 BE68     		ldr	r6, [r7, #8]
+ 212 00e6 FFF7FEFF 		bl	__aeabi_i2f
+ 213              	.LVL20:
+ 214 00ea 311C     		adds	r1, r6, #0
+ 215 00ec FFF7FEFF 		bl	__aeabi_fsub
+ 216              	.LVL21:
+ 217 00f0 1390     		str	r0, [sp, #76]
+ 218 00f2 564B     		ldr	r3, .L19+24
+ 219 00f4 5A19     		adds	r2, r3, r5
+ 220 00f6 5168     		ldr	r1, [r2, #4]
+ 221 00f8 5269     		ldr	r2, [r2, #20]
+ 222 00fa 9146     		mov	r9, r2
+ 223 00fc 8A1A     		subs	r2, r1, r2
+ 224 00fe 9246     		mov	r10, r2
+ 225 0100 311C     		adds	r1, r6, #0
+ 226 0102 1868     		ldr	r0, [r3]
+ 227 0104 FFF7FEFF 		bl	__aeabi_fsub
+ 228              	.LVL22:
+ 229 0108 061C     		adds	r6, r0, #0
+ 230 010a 5046     		mov	r0, r10
+ 231 010c FFF7FEFF 		bl	__aeabi_i2f
+ 232              	.LVL23:
+ 233 0110 311C     		adds	r1, r6, #0
+ 234 0112 FFF7FEFF 		bl	__aeabi_fdiv
+ 235              	.LVL24:
+ 236 0116 011C     		adds	r1, r0, #0
+ 237 0118 1398     		ldr	r0, [sp, #76]
+ 238 011a FFF7FEFF 		bl	__aeabi_fmul
+ 239              	.LVL25:
+ 240 011e 061C     		adds	r6, r0, #0
+ 241 0120 4846     		mov	r0, r9
+ 242 0122 FFF7FEFF 		bl	__aeabi_i2f
+ 243              	.LVL26:
+ 244 0126 311C     		adds	r1, r6, #0
+ 245 0128 FFF7FEFF 		bl	__aeabi_fadd
+ 246              	.LVL27:
+ 247 012c FFF7FEFF 		bl	__aeabi_f2iz
+ 248              	.LVL28:
+ 249 0130 474B     		ldr	r3, .L19+28
+ 250 0132 E850     		str	r0, [r5, r3]
+  88:main.c        ****             servoDuty[i] = (potVal[i]-potLowLimit)*((servoHighLimit[i]-servoLowLimit[i])/(potHighLi
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 7
+
+
+ 251              		.loc 1 88 0 discriminator 3
+ 252 0134 0134     		adds	r4, r4, #1
+ 253 0136 7C60     		str	r4, [r7, #4]
+ 254              	.L10:
+  88:main.c        ****             servoDuty[i] = (potVal[i]-potLowLimit)*((servoHighLimit[i]-servoLowLimit[i])/(potHighLi
+ 255              		.loc 1 88 0 is_stmt 0 discriminator 1
+ 256 0138 404B     		ldr	r3, .L19+8
+ 257 013a 5C68     		ldr	r4, [r3, #4]
+ 258 013c 032C     		cmp	r4, #3
+ 259 013e CDDD     		ble	.L11
+  90:main.c        ****         }       
+  91:main.c        ****         
+  92:main.c        ****         //Find Servo Duty Percentage
+  93:main.c        ****         for (i=0;i<4;i++){
+ 260              		.loc 1 93 0 is_stmt 1
+ 261 0140 0022     		movs	r2, #0
+ 262 0142 5A60     		str	r2, [r3, #4]
+ 263 0144 21E0     		b	.L12
+ 264              	.L13:
+  94:main.c        ****             servoDutyPer[i] = 100-(((float)servoDuty[i]/(float)servoHighLimit[i])*100.0);
+ 265              		.loc 1 94 0 discriminator 3
+ 266 0146 A600     		lsls	r6, r4, #2
+ 267 0148 414B     		ldr	r3, .L19+28
+ 268 014a F058     		ldr	r0, [r6, r3]
+ 269 014c FFF7FEFF 		bl	__aeabi_i2f
+ 270              	.LVL29:
+ 271 0150 051C     		adds	r5, r0, #0
+ 272 0152 3E4B     		ldr	r3, .L19+24
+ 273 0154 9B19     		adds	r3, r3, r6
+ 274 0156 5868     		ldr	r0, [r3, #4]
+ 275 0158 FFF7FEFF 		bl	__aeabi_i2f
+ 276              	.LVL30:
+ 277 015c 011C     		adds	r1, r0, #0
+ 278 015e 281C     		adds	r0, r5, #0
+ 279 0160 FFF7FEFF 		bl	__aeabi_fdiv
+ 280              	.LVL31:
+ 281 0164 FFF7FEFF 		bl	__aeabi_f2d
+ 282              	.LVL32:
+ 283 0168 0022     		movs	r2, #0
+ 284 016a 3A4B     		ldr	r3, .L19+32
+ 285 016c FFF7FEFF 		bl	__aeabi_dmul
+ 286              	.LVL33:
+ 287 0170 0200     		movs	r2, r0
+ 288 0172 0B00     		movs	r3, r1
+ 289 0174 0020     		movs	r0, #0
+ 290 0176 3749     		ldr	r1, .L19+32
+ 291 0178 FFF7FEFF 		bl	__aeabi_dsub
+ 292              	.LVL34:
+ 293 017c FFF7FEFF 		bl	__aeabi_d2f
+ 294              	.LVL35:
+ 295 0180 354B     		ldr	r3, .L19+36
+ 296 0182 F050     		str	r0, [r6, r3]
+  93:main.c        ****             servoDutyPer[i] = 100-(((float)servoDuty[i]/(float)servoHighLimit[i])*100.0);
+ 297              		.loc 1 93 0 discriminator 3
+ 298 0184 0134     		adds	r4, r4, #1
+ 299 0186 2D4B     		ldr	r3, .L19+8
+ 300 0188 5C60     		str	r4, [r3, #4]
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 8
+
+
+ 301              	.L12:
+  93:main.c        ****             servoDutyPer[i] = 100-(((float)servoDuty[i]/(float)servoHighLimit[i])*100.0);
+ 302              		.loc 1 93 0 is_stmt 0 discriminator 1
+ 303 018a 2C4B     		ldr	r3, .L19+8
+ 304 018c 5C68     		ldr	r4, [r3, #4]
+ 305 018e 032C     		cmp	r4, #3
+ 306 0190 D9DD     		ble	.L13
+  95:main.c        ****         }
+  96:main.c        ****        
+  97:main.c        ****         // clear line
+  98:main.c        ****         
+  99:main.c        ****         sprintf(str,"\33[2K\rRaw POT Values: %d, %d, %d, %d\r\n\33[2K\rPOT Values: %d, %d, %d, %d\r
+ 100:main.c        ****             rawPotVal[0],rawPotVal[1],rawPotVal[2],rawPotVal[3],\
+ 101:main.c        ****             potVal[0],potVal[1],potVal[2],potVal[3],\
+ 102:main.c        ****             servoDuty[0],servoDuty[1],servoDuty[2],servoDuty[3],\
+ 103:main.c        ****             servoDutyPer[0],servoDutyPer[1],servoDutyPer[2],servoDutyPer[3]);
+ 307              		.loc 1 103 0 is_stmt 1
+ 308 0192 314B     		ldr	r3, .L19+36
+ 309 0194 1C68     		ldr	r4, [r3]
+ 310 0196 5A68     		ldr	r2, [r3, #4]
+ 311 0198 9146     		mov	r9, r2
+ 312 019a 9A68     		ldr	r2, [r3, #8]
+ 313 019c 9246     		mov	r10, r2
+ 314 019e D868     		ldr	r0, [r3, #12]
+  99:main.c        ****             rawPotVal[0],rawPotVal[1],rawPotVal[2],rawPotVal[3],\
+ 315              		.loc 1 99 0
+ 316 01a0 284E     		ldr	r6, .L19+16
+ 317 01a2 7368     		ldr	r3, [r6, #4]
+ 318 01a4 9846     		mov	r8, r3
+ 319 01a6 3768     		ldr	r7, [r6]
+ 320 01a8 2C4D     		ldr	r5, .L19+40
+ 321 01aa FFF7FEFF 		bl	__aeabi_f2d
+ 322              	.LVL36:
+ 323 01ae 1090     		str	r0, [sp, #64]
+ 324 01b0 1191     		str	r1, [sp, #68]
+ 325 01b2 5046     		mov	r0, r10
+ 326 01b4 FFF7FEFF 		bl	__aeabi_f2d
+ 327              	.LVL37:
+ 328 01b8 0E90     		str	r0, [sp, #56]
+ 329 01ba 0F91     		str	r1, [sp, #60]
+ 330 01bc 4846     		mov	r0, r9
+ 331 01be FFF7FEFF 		bl	__aeabi_f2d
+ 332              	.LVL38:
+ 333 01c2 0C90     		str	r0, [sp, #48]
+ 334 01c4 0D91     		str	r1, [sp, #52]
+ 335 01c6 201C     		adds	r0, r4, #0
+ 336 01c8 FFF7FEFF 		bl	__aeabi_f2d
+ 337              	.LVL39:
+ 338 01cc 0A90     		str	r0, [sp, #40]
+ 339 01ce 0B91     		str	r1, [sp, #44]
+ 340 01d0 1F4C     		ldr	r4, .L19+28
+ 341 01d2 E368     		ldr	r3, [r4, #12]
+ 342 01d4 0993     		str	r3, [sp, #36]
+ 343 01d6 A368     		ldr	r3, [r4, #8]
+ 344 01d8 0893     		str	r3, [sp, #32]
+ 345 01da 6368     		ldr	r3, [r4, #4]
+ 346 01dc 0793     		str	r3, [sp, #28]
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 9
+
+
+ 347 01de 2368     		ldr	r3, [r4]
+ 348 01e0 0693     		str	r3, [sp, #24]
+ 349 01e2 194B     		ldr	r3, .L19+20
+ 350 01e4 DA68     		ldr	r2, [r3, #12]
+ 351 01e6 0592     		str	r2, [sp, #20]
+ 352 01e8 9A68     		ldr	r2, [r3, #8]
+ 353 01ea 0492     		str	r2, [sp, #16]
+ 354 01ec 5A68     		ldr	r2, [r3, #4]
+ 355 01ee 0392     		str	r2, [sp, #12]
+ 356 01f0 1B68     		ldr	r3, [r3]
+ 357 01f2 0293     		str	r3, [sp, #8]
+ 358 01f4 5B46     		mov	r3, fp
+ 359 01f6 0193     		str	r3, [sp, #4]
+ 360 01f8 B368     		ldr	r3, [r6, #8]
+ 361 01fa 0093     		str	r3, [sp]
+ 362 01fc 4346     		mov	r3, r8
+ 363 01fe 3A00     		movs	r2, r7
+ 364 0200 1749     		ldr	r1, .L19+44
+ 365 0202 2800     		movs	r0, r5
+ 366 0204 FFF7FEFF 		bl	sprintf
+ 367              	.LVL40:
+ 104:main.c        ****         //UART_UartPutString(str);
+ 105:main.c        ****         //sprintf(str,"\33[2K\r POT Value: %d\r\n",potVal);
+ 106:main.c        ****         //UART_UartPutString(str);
+ 107:main.c        ****         //sprintf(str,"\33[2K\r Servo Duty Value: %d\r\n",servoDuty);
+ 108:main.c        ****         //UART_UartPutString(str);
+ 109:main.c        ****         //sprintf(str,"\33[2K\r Servo Duty Value: %f%%\r\n",100-(((float)servoDuty/(float)servoHigh
+ 110:main.c        ****         UART_UartPutString(str);
+ 368              		.loc 1 110 0
+ 369 0208 2800     		movs	r0, r5
+ 370 020a FFF7FEFF 		bl	UART_UartPutString
+ 371              	.LVL41:
+ 111:main.c        ****         
+ 112:main.c        ****         PWM_1_WriteCompare(servoDuty[0]);
+ 372              		.loc 1 112 0
+ 373 020e 2068     		ldr	r0, [r4]
+ 374 0210 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 375              	.LVL42:
+ 113:main.c        ****         PWM_2_WriteCompare(servoDuty[1]);
+ 376              		.loc 1 113 0
+ 377 0214 6068     		ldr	r0, [r4, #4]
+ 378 0216 FFF7FEFF 		bl	PWM_2_WriteCompare
+ 379              	.LVL43:
+ 114:main.c        ****         PWM_3_WriteCompare(servoDuty[2]);
+ 380              		.loc 1 114 0
+ 381 021a A068     		ldr	r0, [r4, #8]
+ 382 021c FFF7FEFF 		bl	PWM_3_WriteCompare
+ 383              	.LVL44:
+ 115:main.c        ****         PWM_4_WriteCompare(servoDuty[3]);
+ 384              		.loc 1 115 0
+ 385 0220 E068     		ldr	r0, [r4, #12]
+ 386 0222 FFF7FEFF 		bl	PWM_4_WriteCompare
+ 387              	.LVL45:
+ 116:main.c        ****         first = 1;
+ 388              		.loc 1 116 0
+ 389 0226 0122     		movs	r2, #1
+ 390 0228 044B     		ldr	r3, .L19+8
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 10
+
+
+ 391 022a 1A60     		str	r2, [r3]
+ 117:main.c        ****         CyDelay(100);
+ 392              		.loc 1 117 0
+ 393 022c 6420     		movs	r0, #100
+ 394 022e FFF7FEFF 		bl	CyDelay
+ 395              	.LVL46:
+ 118:main.c        ****     }
+ 396              		.loc 1 118 0
+ 397 0232 05E7     		b	.L14
+ 398              	.L20:
+ 399              		.align	2
+ 400              	.L19:
+ 401 0234 00000000 		.word	.LC0
+ 402 0238 10000000 		.word	.LC2
+ 403 023c 00000000 		.word	.LANCHOR0
+ 404 0240 28000000 		.word	.LC5
+ 405 0244 00000000 		.word	rawPotVal
+ 406 0248 00000000 		.word	potVal
+ 407 024c 00000000 		.word	.LANCHOR1
+ 408 0250 00000000 		.word	servoDuty
+ 409 0254 00005940 		.word	1079574528
+ 410 0258 00000000 		.word	servoDutyPer
+ 411 025c 00000000 		.word	str
+ 412 0260 50000000 		.word	.LC12
+ 413              		.cfi_endproc
+ 414              	.LFE33:
+ 415              		.size	main, .-main
+ 416              		.global	i
+ 417              		.global	first
+ 418              		.global	potLowLimit
+ 419              		.global	potHighLimit
+ 420              		.comm	servoDutyPer,16,4
+ 421              		.global	servoLowLimit
+ 422              		.global	servoHighLimit
+ 423              		.comm	servoDuty,16,4
+ 424              		.comm	rawPotVal,16,4
+ 425              		.comm	potVal,16,4
+ 426              		.comm	str,200,4
+ 427              		.data
+ 428              		.align	2
+ 429              		.set	.LANCHOR1,. + 0
+ 430              		.type	potHighLimit, %object
+ 431              		.size	potHighLimit, 4
+ 432              	potHighLimit:
+ 433 0000 0080A244 		.word	1151500288
+ 434              		.type	servoHighLimit, %object
+ 435              		.size	servoHighLimit, 16
+ 436              	servoHighLimit:
+ 437 0004 5C120000 		.word	4700
+ 438 0008 3E120000 		.word	4670
+ 439 000c 24130000 		.word	4900
+ 440 0010 24130000 		.word	4900
+ 441              		.type	servoLowLimit, %object
+ 442              		.size	servoLowLimit, 16
+ 443              	servoLowLimit:
+ 444 0014 CC100000 		.word	4300
+ 445 0018 9A100000 		.word	4250
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 11
+
+
+ 446 001c 04100000 		.word	4100
+ 447 0020 04100000 		.word	4100
+ 448              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 449              		.align	2
+ 450              	.LC0:
+ 451 0000 41726D20 		.ascii	"Arm Test v1.0\015\012\000"
+ 451      54657374 
+ 451      2076312E 
+ 451      300D0A00 
+ 452              	.LC2:
+ 453 0010 41757468 		.ascii	"Author: Amar Bhatt\015\012\015\012\000"
+ 453      6F723A20 
+ 453      416D6172 
+ 453      20426861 
+ 453      74740D0A 
+ 454 0027 00       		.space	1
+ 455              	.LC5:
+ 456 0028 0D1B5B41 		.ascii	"\015\033[A\033[2K \015\033[A\033[2K \015\033[A\033["
+ 456      1B5B324B 
+ 456      200D1B5B 
+ 456      411B5B32 
+ 456      4B200D1B 
+ 457 0040 324B200D 		.ascii	"2K \015\033[A\033[2K \015\000"
+ 457      1B5B411B 
+ 457      5B324B20 
+ 457      0D00
+ 458 004e 0000     		.space	2
+ 459              	.LC12:
+ 460 0050 1B5B324B 		.ascii	"\033[2K\015Raw POT Values: %d, %d, %d, %d\015\012\033"
+ 460      0D526177 
+ 460      20504F54 
+ 460      2056616C 
+ 460      7565733A 
+ 461 0076 5B324B0D 		.ascii	"[2K\015POT Values: %d, %d, %d, %d\015\012\033[2K\015"
+ 461      504F5420 
+ 461      56616C75 
+ 461      65733A20 
+ 461      25642C20 
+ 462 009b 53657276 		.ascii	"Servo Duty Counts: %d, %d, %d, %d\015\012\033[2K\015"
+ 462      6F204475 
+ 462      74792043 
+ 462      6F756E74 
+ 462      733A2025 
+ 463 00c3 53657276 		.ascii	"Servo Duty Values: %f%%, %f%%, %f%%, %f%%\015\012\000"
+ 463      6F204475 
+ 463      74792056 
+ 463      616C7565 
+ 463      733A2025 
+ 464              		.bss
+ 465              		.align	2
+ 466              		.set	.LANCHOR0,. + 0
+ 467              		.type	first, %object
+ 468              		.size	first, 4
+ 469              	first:
+ 470 0000 00000000 		.space	4
+ 471              		.type	i, %object
+ 472              		.size	i, 4
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 12
+
+
+ 473              	i:
+ 474 0004 00000000 		.space	4
+ 475              		.type	potLowLimit, %object
+ 476              		.size	potLowLimit, 4
+ 477              	potLowLimit:
+ 478 0008 00000000 		.space	4
+ 479              		.text
+ 480              	.Letext0:
+ 481              		.file 2 "Generated_Source\\PSoC4/UART.h"
+ 482              		.file 3 "Generated_Source\\PSoC4/ADC.h"
+ 483              		.file 4 "Generated_Source\\PSoC4/PWM_1.h"
+ 484              		.file 5 "Generated_Source\\PSoC4/PWM_2.h"
+ 485              		.file 6 "Generated_Source\\PSoC4/PWM_3.h"
+ 486              		.file 7 "Generated_Source\\PSoC4/PWM_4.h"
+ 487              		.file 8 "Generated_Source\\PSoC4/CyLib.h"
+ 488              		.file 9 "Generated_Source\\PSoC4/UART_SPI_UART.h"
+ 489              		.file 10 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4
+ 490              		.section	.debug_info,"",%progbits
+ 491              	.Ldebug_info0:
+ 492 0000 99030000 		.4byte	0x399
+ 493 0004 0400     		.2byte	0x4
+ 494 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 495 000a 04       		.byte	0x4
+ 496 000b 01       		.uleb128 0x1
+ 497 000c 5C010000 		.4byte	.LASF38
+ 498 0010 0C       		.byte	0xc
+ 499 0011 3F020000 		.4byte	.LASF39
+ 500 0015 00000000 		.4byte	.LASF40
+ 501 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 502 001d 00000000 		.4byte	0
+ 503 0021 00000000 		.4byte	.Ldebug_line0
+ 504 0025 02       		.uleb128 0x2
+ 505 0026 01       		.byte	0x1
+ 506 0027 06       		.byte	0x6
+ 507 0028 A3020000 		.4byte	.LASF0
+ 508 002c 02       		.uleb128 0x2
+ 509 002d 01       		.byte	0x1
+ 510 002e 08       		.byte	0x8
+ 511 002f 99000000 		.4byte	.LASF1
+ 512 0033 02       		.uleb128 0x2
+ 513 0034 02       		.byte	0x2
+ 514 0035 05       		.byte	0x5
+ 515 0036 58020000 		.4byte	.LASF2
+ 516 003a 02       		.uleb128 0x2
+ 517 003b 02       		.byte	0x2
+ 518 003c 07       		.byte	0x7
+ 519 003d 54000000 		.4byte	.LASF3
+ 520 0041 02       		.uleb128 0x2
+ 521 0042 04       		.byte	0x4
+ 522 0043 05       		.byte	0x5
+ 523 0044 7B020000 		.4byte	.LASF4
+ 524 0048 02       		.uleb128 0x2
+ 525 0049 04       		.byte	0x4
+ 526 004a 07       		.byte	0x7
+ 527 004b B8000000 		.4byte	.LASF5
+ 528 004f 02       		.uleb128 0x2
+ 529 0050 08       		.byte	0x8
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 13
+
+
+ 530 0051 05       		.byte	0x5
+ 531 0052 28020000 		.4byte	.LASF6
+ 532 0056 02       		.uleb128 0x2
+ 533 0057 08       		.byte	0x8
+ 534 0058 07       		.byte	0x7
+ 535 0059 2F010000 		.4byte	.LASF7
+ 536 005d 03       		.uleb128 0x3
+ 537 005e 04       		.byte	0x4
+ 538 005f 05       		.byte	0x5
+ 539 0060 696E7400 		.ascii	"int\000"
+ 540 0064 02       		.uleb128 0x2
+ 541 0065 04       		.byte	0x4
+ 542 0066 07       		.byte	0x7
+ 543 0067 22010000 		.4byte	.LASF8
+ 544 006b 02       		.uleb128 0x2
+ 545 006c 04       		.byte	0x4
+ 546 006d 04       		.byte	0x4
+ 547 006e 93000000 		.4byte	.LASF9
+ 548 0072 02       		.uleb128 0x2
+ 549 0073 08       		.byte	0x8
+ 550 0074 04       		.byte	0x4
+ 551 0075 F1000000 		.4byte	.LASF10
+ 552 0079 02       		.uleb128 0x2
+ 553 007a 01       		.byte	0x1
+ 554 007b 08       		.byte	0x8
+ 555 007c 46020000 		.4byte	.LASF11
+ 556 0080 02       		.uleb128 0x2
+ 557 0081 08       		.byte	0x8
+ 558 0082 04       		.byte	0x4
+ 559 0083 84020000 		.4byte	.LASF12
+ 560 0087 02       		.uleb128 0x2
+ 561 0088 04       		.byte	0x4
+ 562 0089 07       		.byte	0x7
+ 563 008a 36020000 		.4byte	.LASF13
+ 564 008e 04       		.uleb128 0x4
+ 565 008f 04010000 		.4byte	.LASF41
+ 566 0093 01       		.byte	0x1
+ 567 0094 26       		.byte	0x26
+ 568 0095 5D000000 		.4byte	0x5d
+ 569 0099 00000000 		.4byte	.LFB33
+ 570 009d 64020000 		.4byte	.LFE33-.LFB33
+ 571 00a1 01       		.uleb128 0x1
+ 572 00a2 9C       		.byte	0x9c
+ 573 00a3 05020000 		.4byte	0x205
+ 574 00a7 05       		.uleb128 0x5
+ 575 00a8 14000000 		.4byte	.LVL0
+ 576 00ac EE020000 		.4byte	0x2ee
+ 577 00b0 05       		.uleb128 0x5
+ 578 00b1 18000000 		.4byte	.LVL1
+ 579 00b5 F9020000 		.4byte	0x2f9
+ 580 00b9 05       		.uleb128 0x5
+ 581 00ba 1C000000 		.4byte	.LVL2
+ 582 00be 04030000 		.4byte	0x304
+ 583 00c2 05       		.uleb128 0x5
+ 584 00c3 20000000 		.4byte	.LVL3
+ 585 00c7 0F030000 		.4byte	0x30f
+ 586 00cb 05       		.uleb128 0x5
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 14
+
+
+ 587 00cc 24000000 		.4byte	.LVL4
+ 588 00d0 1B030000 		.4byte	0x31b
+ 589 00d4 05       		.uleb128 0x5
+ 590 00d5 28000000 		.4byte	.LVL5
+ 591 00d9 27030000 		.4byte	0x327
+ 592 00dd 05       		.uleb128 0x5
+ 593 00de 2C000000 		.4byte	.LVL6
+ 594 00e2 33030000 		.4byte	0x333
+ 595 00e6 06       		.uleb128 0x6
+ 596 00e7 34000000 		.4byte	.LVL7
+ 597 00eb 3F030000 		.4byte	0x33f
+ 598 00ef FB000000 		.4byte	0xfb
+ 599 00f3 07       		.uleb128 0x7
+ 600 00f4 01       		.uleb128 0x1
+ 601 00f5 50       		.byte	0x50
+ 602 00f6 03       		.uleb128 0x3
+ 603 00f7 0A       		.byte	0xa
+ 604 00f8 F401     		.2byte	0x1f4
+ 605 00fa 00       		.byte	0
+ 606 00fb 06       		.uleb128 0x6
+ 607 00fc 3A000000 		.4byte	.LVL8
+ 608 0100 4A030000 		.4byte	0x34a
+ 609 0104 12010000 		.4byte	0x112
+ 610 0108 07       		.uleb128 0x7
+ 611 0109 01       		.uleb128 0x1
+ 612 010a 50       		.byte	0x50
+ 613 010b 05       		.uleb128 0x5
+ 614 010c 03       		.byte	0x3
+ 615 010d 00000000 		.4byte	.LC0
+ 616 0111 00       		.byte	0
+ 617 0112 06       		.uleb128 0x6
+ 618 0113 40000000 		.4byte	.LVL9
+ 619 0117 4A030000 		.4byte	0x34a
+ 620 011b 29010000 		.4byte	0x129
+ 621 011f 07       		.uleb128 0x7
+ 622 0120 01       		.uleb128 0x1
+ 623 0121 50       		.byte	0x50
+ 624 0122 05       		.uleb128 0x5
+ 625 0123 03       		.byte	0x3
+ 626 0124 10000000 		.4byte	.LC2
+ 627 0128 00       		.byte	0
+ 628 0129 06       		.uleb128 0x6
+ 629 012a 4E000000 		.4byte	.LVL10
+ 630 012e 4A030000 		.4byte	0x34a
+ 631 0132 40010000 		.4byte	0x140
+ 632 0136 07       		.uleb128 0x7
+ 633 0137 01       		.uleb128 0x1
+ 634 0138 50       		.byte	0x50
+ 635 0139 05       		.uleb128 0x5
+ 636 013a 03       		.byte	0x3
+ 637 013b 28000000 		.4byte	.LC5
+ 638 013f 00       		.byte	0
+ 639 0140 06       		.uleb128 0x6
+ 640 0141 54000000 		.4byte	.LVL11
+ 641 0145 56030000 		.4byte	0x356
+ 642 0149 53010000 		.4byte	0x153
+ 643 014d 07       		.uleb128 0x7
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 15
+
+
+ 644 014e 01       		.uleb128 0x1
+ 645 014f 50       		.byte	0x50
+ 646 0150 01       		.uleb128 0x1
+ 647 0151 30       		.byte	0x30
+ 648 0152 00       		.byte	0
+ 649 0153 06       		.uleb128 0x6
+ 650 0154 5E000000 		.4byte	.LVL12
+ 651 0158 56030000 		.4byte	0x356
+ 652 015c 66010000 		.4byte	0x166
+ 653 0160 07       		.uleb128 0x7
+ 654 0161 01       		.uleb128 0x1
+ 655 0162 50       		.byte	0x50
+ 656 0163 01       		.uleb128 0x1
+ 657 0164 31       		.byte	0x31
+ 658 0165 00       		.byte	0
+ 659 0166 06       		.uleb128 0x6
+ 660 0167 66000000 		.4byte	.LVL13
+ 661 016b 56030000 		.4byte	0x356
+ 662 016f 79010000 		.4byte	0x179
+ 663 0173 07       		.uleb128 0x7
+ 664 0174 01       		.uleb128 0x1
+ 665 0175 50       		.byte	0x50
+ 666 0176 01       		.uleb128 0x1
+ 667 0177 32       		.byte	0x32
+ 668 0178 00       		.byte	0
+ 669 0179 06       		.uleb128 0x6
+ 670 017a 6E000000 		.4byte	.LVL14
+ 671 017e 56030000 		.4byte	0x356
+ 672 0182 8C010000 		.4byte	0x18c
+ 673 0186 07       		.uleb128 0x7
+ 674 0187 01       		.uleb128 0x1
+ 675 0188 50       		.byte	0x50
+ 676 0189 01       		.uleb128 0x1
+ 677 018a 33       		.byte	0x33
+ 678 018b 00       		.byte	0
+ 679 018c 06       		.uleb128 0x6
+ 680 018d 08020000 		.4byte	.LVL40
+ 681 0191 61030000 		.4byte	0x361
+ 682 0195 BC010000 		.4byte	0x1bc
+ 683 0199 07       		.uleb128 0x7
+ 684 019a 01       		.uleb128 0x1
+ 685 019b 50       		.byte	0x50
+ 686 019c 02       		.uleb128 0x2
+ 687 019d 75       		.byte	0x75
+ 688 019e 00       		.sleb128 0
+ 689 019f 07       		.uleb128 0x7
+ 690 01a0 01       		.uleb128 0x1
+ 691 01a1 51       		.byte	0x51
+ 692 01a2 05       		.uleb128 0x5
+ 693 01a3 03       		.byte	0x3
+ 694 01a4 50000000 		.4byte	.LC12
+ 695 01a8 07       		.uleb128 0x7
+ 696 01a9 01       		.uleb128 0x1
+ 697 01aa 52       		.byte	0x52
+ 698 01ab 02       		.uleb128 0x2
+ 699 01ac 77       		.byte	0x77
+ 700 01ad 00       		.sleb128 0
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 16
+
+
+ 701 01ae 07       		.uleb128 0x7
+ 702 01af 01       		.uleb128 0x1
+ 703 01b0 53       		.byte	0x53
+ 704 01b1 02       		.uleb128 0x2
+ 705 01b2 78       		.byte	0x78
+ 706 01b3 00       		.sleb128 0
+ 707 01b4 07       		.uleb128 0x7
+ 708 01b5 02       		.uleb128 0x2
+ 709 01b6 7D       		.byte	0x7d
+ 710 01b7 04       		.sleb128 4
+ 711 01b8 02       		.uleb128 0x2
+ 712 01b9 7B       		.byte	0x7b
+ 713 01ba 00       		.sleb128 0
+ 714 01bb 00       		.byte	0
+ 715 01bc 06       		.uleb128 0x6
+ 716 01bd 0E020000 		.4byte	.LVL41
+ 717 01c1 4A030000 		.4byte	0x34a
+ 718 01c5 D0010000 		.4byte	0x1d0
+ 719 01c9 07       		.uleb128 0x7
+ 720 01ca 01       		.uleb128 0x1
+ 721 01cb 50       		.byte	0x50
+ 722 01cc 02       		.uleb128 0x2
+ 723 01cd 75       		.byte	0x75
+ 724 01ce 00       		.sleb128 0
+ 725 01cf 00       		.byte	0
+ 726 01d0 05       		.uleb128 0x5
+ 727 01d1 14020000 		.4byte	.LVL42
+ 728 01d5 6C030000 		.4byte	0x36c
+ 729 01d9 05       		.uleb128 0x5
+ 730 01da 1A020000 		.4byte	.LVL43
+ 731 01de 78030000 		.4byte	0x378
+ 732 01e2 05       		.uleb128 0x5
+ 733 01e3 20020000 		.4byte	.LVL44
+ 734 01e7 84030000 		.4byte	0x384
+ 735 01eb 05       		.uleb128 0x5
+ 736 01ec 26020000 		.4byte	.LVL45
+ 737 01f0 90030000 		.4byte	0x390
+ 738 01f4 08       		.uleb128 0x8
+ 739 01f5 32020000 		.4byte	.LVL46
+ 740 01f9 3F030000 		.4byte	0x33f
+ 741 01fd 07       		.uleb128 0x7
+ 742 01fe 01       		.uleb128 0x1
+ 743 01ff 50       		.byte	0x50
+ 744 0200 02       		.uleb128 0x2
+ 745 0201 08       		.byte	0x8
+ 746 0202 64       		.byte	0x64
+ 747 0203 00       		.byte	0
+ 748 0204 00       		.byte	0
+ 749 0205 09       		.uleb128 0x9
+ 750 0206 79000000 		.4byte	0x79
+ 751 020a 15020000 		.4byte	0x215
+ 752 020e 0A       		.uleb128 0xa
+ 753 020f 87000000 		.4byte	0x87
+ 754 0213 C7       		.byte	0xc7
+ 755 0214 00       		.byte	0
+ 756 0215 0B       		.uleb128 0xb
+ 757 0216 73747200 		.ascii	"str\000"
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 17
+
+
+ 758 021a 01       		.byte	0x1
+ 759 021b 0F       		.byte	0xf
+ 760 021c 05020000 		.4byte	0x205
+ 761 0220 05       		.uleb128 0x5
+ 762 0221 03       		.byte	0x3
+ 763 0222 00000000 		.4byte	str
+ 764 0226 09       		.uleb128 0x9
+ 765 0227 5D000000 		.4byte	0x5d
+ 766 022b 36020000 		.4byte	0x236
+ 767 022f 0A       		.uleb128 0xa
+ 768 0230 87000000 		.4byte	0x87
+ 769 0234 03       		.byte	0x3
+ 770 0235 00       		.byte	0
+ 771 0236 0C       		.uleb128 0xc
+ 772 0237 41000000 		.4byte	.LASF14
+ 773 023b 01       		.byte	0x1
+ 774 023c 11       		.byte	0x11
+ 775 023d 26020000 		.4byte	0x226
+ 776 0241 05       		.uleb128 0x5
+ 777 0242 03       		.byte	0x3
+ 778 0243 00000000 		.4byte	potVal
+ 779 0247 0C       		.uleb128 0xc
+ 780 0248 71020000 		.4byte	.LASF15
+ 781 024c 01       		.byte	0x1
+ 782 024d 12       		.byte	0x12
+ 783 024e 26020000 		.4byte	0x226
+ 784 0252 05       		.uleb128 0x5
+ 785 0253 03       		.byte	0x3
+ 786 0254 00000000 		.4byte	rawPotVal
+ 787 0258 0C       		.uleb128 0xc
+ 788 0259 0B020000 		.4byte	.LASF16
+ 789 025d 01       		.byte	0x1
+ 790 025e 13       		.byte	0x13
+ 791 025f 26020000 		.4byte	0x226
+ 792 0263 05       		.uleb128 0x5
+ 793 0264 03       		.byte	0x3
+ 794 0265 00000000 		.4byte	servoDuty
+ 795 0269 0C       		.uleb128 0xc
+ 796 026a 62020000 		.4byte	.LASF17
+ 797 026e 01       		.byte	0x1
+ 798 026f 14       		.byte	0x14
+ 799 0270 26020000 		.4byte	0x226
+ 800 0274 05       		.uleb128 0x5
+ 801 0275 03       		.byte	0x3
+ 802 0276 00000000 		.4byte	servoHighLimit
+ 803 027a 0C       		.uleb128 0xc
+ 804 027b FD010000 		.4byte	.LASF18
+ 805 027f 01       		.byte	0x1
+ 806 0280 15       		.byte	0x15
+ 807 0281 26020000 		.4byte	0x226
+ 808 0285 05       		.uleb128 0x5
+ 809 0286 03       		.byte	0x3
+ 810 0287 00000000 		.4byte	servoLowLimit
+ 811 028b 09       		.uleb128 0x9
+ 812 028c 6B000000 		.4byte	0x6b
+ 813 0290 9B020000 		.4byte	0x29b
+ 814 0294 0A       		.uleb128 0xa
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 18
+
+
+ 815 0295 87000000 		.4byte	0x87
+ 816 0299 03       		.byte	0x3
+ 817 029a 00       		.byte	0
+ 818 029b 0C       		.uleb128 0xc
+ 819 029c 4B020000 		.4byte	.LASF19
+ 820 02a0 01       		.byte	0x1
+ 821 02a1 16       		.byte	0x16
+ 822 02a2 8B020000 		.4byte	0x28b
+ 823 02a6 05       		.uleb128 0x5
+ 824 02a7 03       		.byte	0x3
+ 825 02a8 00000000 		.4byte	servoDutyPer
+ 826 02ac 0C       		.uleb128 0xc
+ 827 02ad 09010000 		.4byte	.LASF20
+ 828 02b1 01       		.byte	0x1
+ 829 02b2 21       		.byte	0x21
+ 830 02b3 6B000000 		.4byte	0x6b
+ 831 02b7 05       		.uleb128 0x5
+ 832 02b8 03       		.byte	0x3
+ 833 02b9 00000000 		.4byte	potHighLimit
+ 834 02bd 0C       		.uleb128 0xc
+ 835 02be 48000000 		.4byte	.LASF21
+ 836 02c2 01       		.byte	0x1
+ 837 02c3 22       		.byte	0x22
+ 838 02c4 6B000000 		.4byte	0x6b
+ 839 02c8 05       		.uleb128 0x5
+ 840 02c9 03       		.byte	0x3
+ 841 02ca 00000000 		.4byte	potLowLimit
+ 842 02ce 0C       		.uleb128 0xc
+ 843 02cf 67000000 		.4byte	.LASF22
+ 844 02d3 01       		.byte	0x1
+ 845 02d4 23       		.byte	0x23
+ 846 02d5 5D000000 		.4byte	0x5d
+ 847 02d9 05       		.uleb128 0x5
+ 848 02da 03       		.byte	0x3
+ 849 02db 00000000 		.4byte	first
+ 850 02df 0B       		.uleb128 0xb
+ 851 02e0 6900     		.ascii	"i\000"
+ 852 02e2 01       		.byte	0x1
+ 853 02e3 24       		.byte	0x24
+ 854 02e4 5D000000 		.4byte	0x5d
+ 855 02e8 05       		.uleb128 0x5
+ 856 02e9 03       		.byte	0x3
+ 857 02ea 00000000 		.4byte	i
+ 858 02ee 0D       		.uleb128 0xd
+ 859 02ef D6000000 		.4byte	.LASF23
+ 860 02f3 D6000000 		.4byte	.LASF23
+ 861 02f7 02       		.byte	0x2
+ 862 02f8 72       		.byte	0x72
+ 863 02f9 0D       		.uleb128 0xd
+ 864 02fa 46010000 		.4byte	.LASF24
+ 865 02fe 46010000 		.4byte	.LASF24
+ 866 0302 03       		.byte	0x3
+ 867 0303 99       		.byte	0x99
+ 868 0304 0D       		.uleb128 0xd
+ 869 0305 A7000000 		.4byte	.LASF25
+ 870 0309 A7000000 		.4byte	.LASF25
+ 871 030d 03       		.byte	0x3
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 19
+
+
+ 872 030e 9D       		.byte	0x9d
+ 873 030f 0E       		.uleb128 0xe
+ 874 0310 CA000000 		.4byte	.LASF26
+ 875 0314 CA000000 		.4byte	.LASF26
+ 876 0318 04       		.byte	0x4
+ 877 0319 3201     		.2byte	0x132
+ 878 031b 0E       		.uleb128 0xe
+ 879 031c F8000000 		.4byte	.LASF27
+ 880 0320 F8000000 		.4byte	.LASF27
+ 881 0324 05       		.byte	0x5
+ 882 0325 3201     		.2byte	0x132
+ 883 0327 0E       		.uleb128 0xe
+ 884 0328 16010000 		.4byte	.LASF28
+ 885 032c 16010000 		.4byte	.LASF28
+ 886 0330 06       		.byte	0x6
+ 887 0331 3201     		.2byte	0x132
+ 888 0333 0E       		.uleb128 0xe
+ 889 0334 50010000 		.4byte	.LASF29
+ 890 0338 50010000 		.4byte	.LASF29
+ 891 033c 07       		.byte	0x7
+ 892 033d 3201     		.2byte	0x132
+ 893 033f 0D       		.uleb128 0xd
+ 894 0340 B7020000 		.4byte	.LASF30
+ 895 0344 B7020000 		.4byte	.LASF30
+ 896 0348 08       		.byte	0x8
+ 897 0349 D9       		.byte	0xd9
+ 898 034a 0E       		.uleb128 0xe
+ 899 034b EA010000 		.4byte	.LASF31
+ 900 034f EA010000 		.4byte	.LASF31
+ 901 0353 09       		.byte	0x9
+ 902 0354 2A03     		.2byte	0x32a
+ 903 0356 0D       		.uleb128 0xd
+ 904 0357 E1000000 		.4byte	.LASF32
+ 905 035b E1000000 		.4byte	.LASF32
+ 906 035f 03       		.byte	0x3
+ 907 0360 A0       		.byte	0xa0
+ 908 0361 0D       		.uleb128 0xd
+ 909 0362 AF020000 		.4byte	.LASF33
+ 910 0366 AF020000 		.4byte	.LASF33
+ 911 036a 0A       		.byte	0xa
+ 912 036b E7       		.byte	0xe7
+ 913 036c 0E       		.uleb128 0xe
+ 914 036d 15020000 		.4byte	.LASF34
+ 915 0371 15020000 		.4byte	.LASF34
+ 916 0375 04       		.byte	0x4
+ 917 0376 5501     		.2byte	0x155
+ 918 0378 0E       		.uleb128 0xe
+ 919 0379 6D000000 		.4byte	.LASF35
+ 920 037d 6D000000 		.4byte	.LASF35
+ 921 0381 05       		.byte	0x5
+ 922 0382 5501     		.2byte	0x155
+ 923 0384 0E       		.uleb128 0xe
+ 924 0385 90020000 		.4byte	.LASF36
+ 925 0389 90020000 		.4byte	.LASF36
+ 926 038d 06       		.byte	0x6
+ 927 038e 5501     		.2byte	0x155
+ 928 0390 0E       		.uleb128 0xe
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 20
+
+
+ 929 0391 80000000 		.4byte	.LASF37
+ 930 0395 80000000 		.4byte	.LASF37
+ 931 0399 07       		.byte	0x7
+ 932 039a 5501     		.2byte	0x155
+ 933 039c 00       		.byte	0
+ 934              		.section	.debug_abbrev,"",%progbits
+ 935              	.Ldebug_abbrev0:
+ 936 0000 01       		.uleb128 0x1
+ 937 0001 11       		.uleb128 0x11
+ 938 0002 01       		.byte	0x1
+ 939 0003 25       		.uleb128 0x25
+ 940 0004 0E       		.uleb128 0xe
+ 941 0005 13       		.uleb128 0x13
+ 942 0006 0B       		.uleb128 0xb
+ 943 0007 03       		.uleb128 0x3
+ 944 0008 0E       		.uleb128 0xe
+ 945 0009 1B       		.uleb128 0x1b
+ 946 000a 0E       		.uleb128 0xe
+ 947 000b 55       		.uleb128 0x55
+ 948 000c 17       		.uleb128 0x17
+ 949 000d 11       		.uleb128 0x11
+ 950 000e 01       		.uleb128 0x1
+ 951 000f 10       		.uleb128 0x10
+ 952 0010 17       		.uleb128 0x17
+ 953 0011 00       		.byte	0
+ 954 0012 00       		.byte	0
+ 955 0013 02       		.uleb128 0x2
+ 956 0014 24       		.uleb128 0x24
+ 957 0015 00       		.byte	0
+ 958 0016 0B       		.uleb128 0xb
+ 959 0017 0B       		.uleb128 0xb
+ 960 0018 3E       		.uleb128 0x3e
+ 961 0019 0B       		.uleb128 0xb
+ 962 001a 03       		.uleb128 0x3
+ 963 001b 0E       		.uleb128 0xe
+ 964 001c 00       		.byte	0
+ 965 001d 00       		.byte	0
+ 966 001e 03       		.uleb128 0x3
+ 967 001f 24       		.uleb128 0x24
+ 968 0020 00       		.byte	0
+ 969 0021 0B       		.uleb128 0xb
+ 970 0022 0B       		.uleb128 0xb
+ 971 0023 3E       		.uleb128 0x3e
+ 972 0024 0B       		.uleb128 0xb
+ 973 0025 03       		.uleb128 0x3
+ 974 0026 08       		.uleb128 0x8
+ 975 0027 00       		.byte	0
+ 976 0028 00       		.byte	0
+ 977 0029 04       		.uleb128 0x4
+ 978 002a 2E       		.uleb128 0x2e
+ 979 002b 01       		.byte	0x1
+ 980 002c 3F       		.uleb128 0x3f
+ 981 002d 19       		.uleb128 0x19
+ 982 002e 03       		.uleb128 0x3
+ 983 002f 0E       		.uleb128 0xe
+ 984 0030 3A       		.uleb128 0x3a
+ 985 0031 0B       		.uleb128 0xb
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 21
+
+
+ 986 0032 3B       		.uleb128 0x3b
+ 987 0033 0B       		.uleb128 0xb
+ 988 0034 27       		.uleb128 0x27
+ 989 0035 19       		.uleb128 0x19
+ 990 0036 49       		.uleb128 0x49
+ 991 0037 13       		.uleb128 0x13
+ 992 0038 8701     		.uleb128 0x87
+ 993 003a 19       		.uleb128 0x19
+ 994 003b 11       		.uleb128 0x11
+ 995 003c 01       		.uleb128 0x1
+ 996 003d 12       		.uleb128 0x12
+ 997 003e 06       		.uleb128 0x6
+ 998 003f 40       		.uleb128 0x40
+ 999 0040 18       		.uleb128 0x18
+ 1000 0041 9642     		.uleb128 0x2116
+ 1001 0043 19       		.uleb128 0x19
+ 1002 0044 01       		.uleb128 0x1
+ 1003 0045 13       		.uleb128 0x13
+ 1004 0046 00       		.byte	0
+ 1005 0047 00       		.byte	0
+ 1006 0048 05       		.uleb128 0x5
+ 1007 0049 898201   		.uleb128 0x4109
+ 1008 004c 00       		.byte	0
+ 1009 004d 11       		.uleb128 0x11
+ 1010 004e 01       		.uleb128 0x1
+ 1011 004f 31       		.uleb128 0x31
+ 1012 0050 13       		.uleb128 0x13
+ 1013 0051 00       		.byte	0
+ 1014 0052 00       		.byte	0
+ 1015 0053 06       		.uleb128 0x6
+ 1016 0054 898201   		.uleb128 0x4109
+ 1017 0057 01       		.byte	0x1
+ 1018 0058 11       		.uleb128 0x11
+ 1019 0059 01       		.uleb128 0x1
+ 1020 005a 31       		.uleb128 0x31
+ 1021 005b 13       		.uleb128 0x13
+ 1022 005c 01       		.uleb128 0x1
+ 1023 005d 13       		.uleb128 0x13
+ 1024 005e 00       		.byte	0
+ 1025 005f 00       		.byte	0
+ 1026 0060 07       		.uleb128 0x7
+ 1027 0061 8A8201   		.uleb128 0x410a
+ 1028 0064 00       		.byte	0
+ 1029 0065 02       		.uleb128 0x2
+ 1030 0066 18       		.uleb128 0x18
+ 1031 0067 9142     		.uleb128 0x2111
+ 1032 0069 18       		.uleb128 0x18
+ 1033 006a 00       		.byte	0
+ 1034 006b 00       		.byte	0
+ 1035 006c 08       		.uleb128 0x8
+ 1036 006d 898201   		.uleb128 0x4109
+ 1037 0070 01       		.byte	0x1
+ 1038 0071 11       		.uleb128 0x11
+ 1039 0072 01       		.uleb128 0x1
+ 1040 0073 31       		.uleb128 0x31
+ 1041 0074 13       		.uleb128 0x13
+ 1042 0075 00       		.byte	0
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 22
+
+
+ 1043 0076 00       		.byte	0
+ 1044 0077 09       		.uleb128 0x9
+ 1045 0078 01       		.uleb128 0x1
+ 1046 0079 01       		.byte	0x1
+ 1047 007a 49       		.uleb128 0x49
+ 1048 007b 13       		.uleb128 0x13
+ 1049 007c 01       		.uleb128 0x1
+ 1050 007d 13       		.uleb128 0x13
+ 1051 007e 00       		.byte	0
+ 1052 007f 00       		.byte	0
+ 1053 0080 0A       		.uleb128 0xa
+ 1054 0081 21       		.uleb128 0x21
+ 1055 0082 00       		.byte	0
+ 1056 0083 49       		.uleb128 0x49
+ 1057 0084 13       		.uleb128 0x13
+ 1058 0085 2F       		.uleb128 0x2f
+ 1059 0086 0B       		.uleb128 0xb
+ 1060 0087 00       		.byte	0
+ 1061 0088 00       		.byte	0
+ 1062 0089 0B       		.uleb128 0xb
+ 1063 008a 34       		.uleb128 0x34
+ 1064 008b 00       		.byte	0
+ 1065 008c 03       		.uleb128 0x3
+ 1066 008d 08       		.uleb128 0x8
+ 1067 008e 3A       		.uleb128 0x3a
+ 1068 008f 0B       		.uleb128 0xb
+ 1069 0090 3B       		.uleb128 0x3b
+ 1070 0091 0B       		.uleb128 0xb
+ 1071 0092 49       		.uleb128 0x49
+ 1072 0093 13       		.uleb128 0x13
+ 1073 0094 3F       		.uleb128 0x3f
+ 1074 0095 19       		.uleb128 0x19
+ 1075 0096 02       		.uleb128 0x2
+ 1076 0097 18       		.uleb128 0x18
+ 1077 0098 00       		.byte	0
+ 1078 0099 00       		.byte	0
+ 1079 009a 0C       		.uleb128 0xc
+ 1080 009b 34       		.uleb128 0x34
+ 1081 009c 00       		.byte	0
+ 1082 009d 03       		.uleb128 0x3
+ 1083 009e 0E       		.uleb128 0xe
+ 1084 009f 3A       		.uleb128 0x3a
+ 1085 00a0 0B       		.uleb128 0xb
+ 1086 00a1 3B       		.uleb128 0x3b
+ 1087 00a2 0B       		.uleb128 0xb
+ 1088 00a3 49       		.uleb128 0x49
+ 1089 00a4 13       		.uleb128 0x13
+ 1090 00a5 3F       		.uleb128 0x3f
+ 1091 00a6 19       		.uleb128 0x19
+ 1092 00a7 02       		.uleb128 0x2
+ 1093 00a8 18       		.uleb128 0x18
+ 1094 00a9 00       		.byte	0
+ 1095 00aa 00       		.byte	0
+ 1096 00ab 0D       		.uleb128 0xd
+ 1097 00ac 2E       		.uleb128 0x2e
+ 1098 00ad 00       		.byte	0
+ 1099 00ae 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 23
+
+
+ 1100 00af 19       		.uleb128 0x19
+ 1101 00b0 3C       		.uleb128 0x3c
+ 1102 00b1 19       		.uleb128 0x19
+ 1103 00b2 6E       		.uleb128 0x6e
+ 1104 00b3 0E       		.uleb128 0xe
+ 1105 00b4 03       		.uleb128 0x3
+ 1106 00b5 0E       		.uleb128 0xe
+ 1107 00b6 3A       		.uleb128 0x3a
+ 1108 00b7 0B       		.uleb128 0xb
+ 1109 00b8 3B       		.uleb128 0x3b
+ 1110 00b9 0B       		.uleb128 0xb
+ 1111 00ba 00       		.byte	0
+ 1112 00bb 00       		.byte	0
+ 1113 00bc 0E       		.uleb128 0xe
+ 1114 00bd 2E       		.uleb128 0x2e
+ 1115 00be 00       		.byte	0
+ 1116 00bf 3F       		.uleb128 0x3f
+ 1117 00c0 19       		.uleb128 0x19
+ 1118 00c1 3C       		.uleb128 0x3c
+ 1119 00c2 19       		.uleb128 0x19
+ 1120 00c3 6E       		.uleb128 0x6e
+ 1121 00c4 0E       		.uleb128 0xe
+ 1122 00c5 03       		.uleb128 0x3
+ 1123 00c6 0E       		.uleb128 0xe
+ 1124 00c7 3A       		.uleb128 0x3a
+ 1125 00c8 0B       		.uleb128 0xb
+ 1126 00c9 3B       		.uleb128 0x3b
+ 1127 00ca 05       		.uleb128 0x5
+ 1128 00cb 00       		.byte	0
+ 1129 00cc 00       		.byte	0
+ 1130 00cd 00       		.byte	0
+ 1131              		.section	.debug_aranges,"",%progbits
+ 1132 0000 1C000000 		.4byte	0x1c
+ 1133 0004 0200     		.2byte	0x2
+ 1134 0006 00000000 		.4byte	.Ldebug_info0
+ 1135 000a 04       		.byte	0x4
+ 1136 000b 00       		.byte	0
+ 1137 000c 0000     		.2byte	0
+ 1138 000e 0000     		.2byte	0
+ 1139 0010 00000000 		.4byte	.LFB33
+ 1140 0014 64020000 		.4byte	.LFE33-.LFB33
+ 1141 0018 00000000 		.4byte	0
+ 1142 001c 00000000 		.4byte	0
+ 1143              		.section	.debug_ranges,"",%progbits
+ 1144              	.Ldebug_ranges0:
+ 1145 0000 00000000 		.4byte	.LFB33
+ 1146 0004 64020000 		.4byte	.LFE33
+ 1147 0008 00000000 		.4byte	0
+ 1148 000c 00000000 		.4byte	0
+ 1149              		.section	.debug_line,"",%progbits
+ 1150              	.Ldebug_line0:
+ 1151 0000 77010000 		.section	.debug_str,"MS",%progbits,1
+ 1151      02000401 
+ 1151      00000201 
+ 1151      FB0E0D00 
+ 1151      01010101 
+ 1152              	.LASF40:
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 24
+
+
+ 1153 0000 433A5C55 		.ascii	"C:\\Users\\bhatt\\Documents\\PSoC Creator\\MotorTes"
+ 1153      73657273 
+ 1153      5C626861 
+ 1153      74745C44 
+ 1153      6F63756D 
+ 1154 002e 74735C41 		.ascii	"ts\\ArmDriver.cydsn\000"
+ 1154      726D4472 
+ 1154      69766572 
+ 1154      2E637964 
+ 1154      736E00
+ 1155              	.LASF14:
+ 1156 0041 706F7456 		.ascii	"potVal\000"
+ 1156      616C00
+ 1157              	.LASF21:
+ 1158 0048 706F744C 		.ascii	"potLowLimit\000"
+ 1158      6F774C69 
+ 1158      6D697400 
+ 1159              	.LASF3:
+ 1160 0054 73686F72 		.ascii	"short unsigned int\000"
+ 1160      7420756E 
+ 1160      7369676E 
+ 1160      65642069 
+ 1160      6E7400
+ 1161              	.LASF22:
+ 1162 0067 66697273 		.ascii	"first\000"
+ 1162      7400
+ 1163              	.LASF35:
+ 1164 006d 50574D5F 		.ascii	"PWM_2_WriteCompare\000"
+ 1164      325F5772 
+ 1164      69746543 
+ 1164      6F6D7061 
+ 1164      726500
+ 1165              	.LASF37:
+ 1166 0080 50574D5F 		.ascii	"PWM_4_WriteCompare\000"
+ 1166      345F5772 
+ 1166      69746543 
+ 1166      6F6D7061 
+ 1166      726500
+ 1167              	.LASF9:
+ 1168 0093 666C6F61 		.ascii	"float\000"
+ 1168      7400
+ 1169              	.LASF1:
+ 1170 0099 756E7369 		.ascii	"unsigned char\000"
+ 1170      676E6564 
+ 1170      20636861 
+ 1170      7200
+ 1171              	.LASF25:
+ 1172 00a7 4144435F 		.ascii	"ADC_StartConvert\000"
+ 1172      53746172 
+ 1172      74436F6E 
+ 1172      76657274 
+ 1172      00
+ 1173              	.LASF5:
+ 1174 00b8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1174      20756E73 
+ 1174      69676E65 
+ 1174      6420696E 
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 25
+
+
+ 1174      7400
+ 1175              	.LASF26:
+ 1176 00ca 50574D5F 		.ascii	"PWM_1_Start\000"
+ 1176      315F5374 
+ 1176      61727400 
+ 1177              	.LASF23:
+ 1178 00d6 55415254 		.ascii	"UART_Start\000"
+ 1178      5F537461 
+ 1178      727400
+ 1179              	.LASF32:
+ 1180 00e1 4144435F 		.ascii	"ADC_GetResult16\000"
+ 1180      47657452 
+ 1180      6573756C 
+ 1180      74313600 
+ 1181              	.LASF10:
+ 1182 00f1 646F7562 		.ascii	"double\000"
+ 1182      6C6500
+ 1183              	.LASF27:
+ 1184 00f8 50574D5F 		.ascii	"PWM_2_Start\000"
+ 1184      325F5374 
+ 1184      61727400 
+ 1185              	.LASF41:
+ 1186 0104 6D61696E 		.ascii	"main\000"
+ 1186      00
+ 1187              	.LASF20:
+ 1188 0109 706F7448 		.ascii	"potHighLimit\000"
+ 1188      6967684C 
+ 1188      696D6974 
+ 1188      00
+ 1189              	.LASF28:
+ 1190 0116 50574D5F 		.ascii	"PWM_3_Start\000"
+ 1190      335F5374 
+ 1190      61727400 
+ 1191              	.LASF8:
+ 1192 0122 756E7369 		.ascii	"unsigned int\000"
+ 1192      676E6564 
+ 1192      20696E74 
+ 1192      00
+ 1193              	.LASF7:
+ 1194 012f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1194      206C6F6E 
+ 1194      6720756E 
+ 1194      7369676E 
+ 1194      65642069 
+ 1195              	.LASF24:
+ 1196 0146 4144435F 		.ascii	"ADC_Start\000"
+ 1196      53746172 
+ 1196      7400
+ 1197              	.LASF29:
+ 1198 0150 50574D5F 		.ascii	"PWM_4_Start\000"
+ 1198      345F5374 
+ 1198      61727400 
+ 1199              	.LASF38:
+ 1200 015c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1200      43313120 
+ 1200      352E342E 
+ 1200      31203230 
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 26
+
+
+ 1200      31363036 
+ 1201 018f 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1201      20726576 
+ 1201      6973696F 
+ 1201      6E203233 
+ 1201      37373135 
+ 1202 01c2 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1202      66756E63 
+ 1202      74696F6E 
+ 1202      2D736563 
+ 1202      74696F6E 
+ 1203              	.LASF31:
+ 1204 01ea 55415254 		.ascii	"UART_UartPutString\000"
+ 1204      5F556172 
+ 1204      74507574 
+ 1204      53747269 
+ 1204      6E6700
+ 1205              	.LASF18:
+ 1206 01fd 73657276 		.ascii	"servoLowLimit\000"
+ 1206      6F4C6F77 
+ 1206      4C696D69 
+ 1206      7400
+ 1207              	.LASF16:
+ 1208 020b 73657276 		.ascii	"servoDuty\000"
+ 1208      6F447574 
+ 1208      7900
+ 1209              	.LASF34:
+ 1210 0215 50574D5F 		.ascii	"PWM_1_WriteCompare\000"
+ 1210      315F5772 
+ 1210      69746543 
+ 1210      6F6D7061 
+ 1210      726500
+ 1211              	.LASF6:
+ 1212 0228 6C6F6E67 		.ascii	"long long int\000"
+ 1212      206C6F6E 
+ 1212      6720696E 
+ 1212      7400
+ 1213              	.LASF13:
+ 1214 0236 73697A65 		.ascii	"sizetype\000"
+ 1214      74797065 
+ 1214      00
+ 1215              	.LASF39:
+ 1216 023f 6D61696E 		.ascii	"main.c\000"
+ 1216      2E6300
+ 1217              	.LASF11:
+ 1218 0246 63686172 		.ascii	"char\000"
+ 1218      00
+ 1219              	.LASF19:
+ 1220 024b 73657276 		.ascii	"servoDutyPer\000"
+ 1220      6F447574 
+ 1220      79506572 
+ 1220      00
+ 1221              	.LASF2:
+ 1222 0258 73686F72 		.ascii	"short int\000"
+ 1222      7420696E 
+ 1222      7400
+ 1223              	.LASF17:
+ARM GAS  C:\Users\bhatt\AppData\Local\Temp\ccFMifLa.s 			page 27
+
+
+ 1224 0262 73657276 		.ascii	"servoHighLimit\000"
+ 1224      6F486967 
+ 1224      684C696D 
+ 1224      697400
+ 1225              	.LASF15:
+ 1226 0271 72617750 		.ascii	"rawPotVal\000"
+ 1226      6F745661 
+ 1226      6C00
+ 1227              	.LASF4:
+ 1228 027b 6C6F6E67 		.ascii	"long int\000"
+ 1228      20696E74 
+ 1228      00
+ 1229              	.LASF12:
+ 1230 0284 6C6F6E67 		.ascii	"long double\000"
+ 1230      20646F75 
+ 1230      626C6500 
+ 1231              	.LASF36:
+ 1232 0290 50574D5F 		.ascii	"PWM_3_WriteCompare\000"
+ 1232      335F5772 
+ 1232      69746543 
+ 1232      6F6D7061 
+ 1232      726500
+ 1233              	.LASF0:
+ 1234 02a3 7369676E 		.ascii	"signed char\000"
+ 1234      65642063 
+ 1234      68617200 
+ 1235              	.LASF33:
+ 1236 02af 73707269 		.ascii	"sprintf\000"
+ 1236      6E746600 
+ 1237              	.LASF30:
+ 1238 02b7 43794465 		.ascii	"CyDelay\000"
+ 1238      6C617900 
+ 1239              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

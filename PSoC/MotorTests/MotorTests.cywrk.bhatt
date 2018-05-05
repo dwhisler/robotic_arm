@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="MotorTests\ArmDriver\Source Files\main.c">
+<ExpandedNodeIds>
+<v>MotorTests</v>
+<v>MotorTests\ArmDriver</v>
+<v>MotorTests\ArmDriver\TopDesign</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Pins</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Analog</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Clocks</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Interrupts</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\System</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Directives</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Flash Security</v>
+<v>MotorTests\ArmDriver\Header Files</v>
+<v>MotorTests\ArmDriver\Header Files\cyapicallbacks.h</v>
+<v>MotorTests\ArmDriver\Source Files</v>
+<v>MotorTests\ArmDriver\Source Files\main.c</v>
+<v>MotorTests\ArmDriver\Generated_Source</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4</v>
+<v>MotorTests\ServoMotorTest\TopDesign</v>
+<v>MotorTests\ServoMotorTest\ServoMotorTest.cydwr</v>
+<v>MotorTests\ServoMotorTest\ServoMotorTest.cydwr\Pins</v>
+<v>MotorTests\ServoMotorTest\ServoMotorTest.cydwr\Analog</v>
+<v>MotorTests\ServoMotorTest\ServoMotorTest.cydwr\Clocks</v>
+<v>MotorTests\ServoMotorTest\ServoMotorTest.cydwr\Interrupts</v>
+<v>MotorTests\ServoMotorTest\ServoMotorTest.cydwr\System</v>
+<v>MotorTests\ServoMotorTest\ServoMotorTest.cydwr\Directives</v>
+<v>MotorTests\ServoMotorTest\ServoMotorTest.cydwr\Flash Security</v>
+<v>MotorTests\ServoMotorTest\Header Files</v>
+<v>MotorTests\ServoMotorTest\Header Files\cyapicallbacks.h</v>
+<v>MotorTests\ServoMotorTest\Source Files</v>
+<v>MotorTests\ServoMotorTest\Source Files\main.c</v>
+<v>MotorTests\ServoMotorTest\Generated_Source</v>
+<v>MotorTests\ServoMotorTest\Generated_Source\PSoC4</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>MotorTests</v>
+<v>MotorTests\ArmDriver</v>
+<v>MotorTests\ArmDriver\TopDesign</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Pins</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Analog</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Clocks</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Interrupts</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\System</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Directives</v>
+<v>MotorTests\ArmDriver\ArmDriver.cydwr\Flash Security</v>
+<v>MotorTests\ArmDriver\Header Files</v>
+<v>MotorTests\ArmDriver\Header Files\cyapicallbacks.h</v>
+<v>MotorTests\ArmDriver\Source Files</v>
+<v>MotorTests\ArmDriver\Source Files\main.c</v>
+<v>MotorTests\ArmDriver\Generated_Source</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\ADC</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\ADC_intClock</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\ADC_IRQ</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\Bootloadable</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\Clock</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\cy_boot</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\cy_lfclk</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\POT_1</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\POT_2</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\POT_3</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\POT_4</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\PWM_1</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\PWM_2</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\PWM_3</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\PWM_4</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\servo_1</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\servo_2</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\servo_3</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\servo_4</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\UART</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\UART_rx</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\UART_SCBCLK</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\UART_tx</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\cybootloader.c</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\cybootloader.icf</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\cycodeshareexport.ld</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\cycodeshareimport.ld</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\cycodeshareimport.scat</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\cydevice_trm.h</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
+<v>MotorTests\ArmDriver\Generated_Source\PSoC4\cydevicerv_trm.inc</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>MotorTests</v>
+<v>MotorTests\ArmDriver</v>
+<v>MotorTests\ArmDriver\TopDesign</v>
+<v>MotorTests\ArmDriver\TopDesign\TopDesign.cysch</v>
+<v>MotorTests\ServoMotorTest</v>
+<v>MotorTests\ServoMotorTest\TopDesign</v>
+<v>MotorTests\ServoMotorTest\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>MotorTests</v>
+<v>MotorTests\ArmDriver</v>
+<v>MotorTests\ArmDriver\TopDesign</v>
+<v>MotorTests\ArmDriver\TopDesign\TopDesign.cysch</v>
+<v>MotorTests\ServoMotorTest</v>
+<v>MotorTests\ServoMotorTest\TopDesign</v>
+<v>MotorTests\ServoMotorTest\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>MotorTests</v>
+<v>MotorTests\ArmDriver</v>
+<v>MotorTests\ArmDriver\CortexM0</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_INT.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_intClock.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_IRQ.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\Bootloadable.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cybootloader.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_1.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_1_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_2.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_2_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_3.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_3_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_4.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_4_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_2.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_2_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_3.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_3_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_4.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_4_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_1.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_1_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_2.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_2_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_3.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_3_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_4.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_4_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_BOOT.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_rx.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_rx_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SCBCLK.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SPI_UART.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SPI_UART_INT.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_tx.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_tx_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_UART.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_UART_BOOT.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\ArmDriver.cyacd</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\ArmDriver.elf</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\ArmDriver.hex</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\ArmDriver.map</v>
+<v>MotorTests\ArmDriver\ArmDriver.gpdsc</v>
+<v>MotorTests\ArmDriver\ArmDriver.rpt</v>
+<v>MotorTests\ArmDriver\ArmDriver_timing.html</v>
+<v>MotorTests\ServoMotorTest</v>
+<v>MotorTests\ServoMotorTest\CortexM0</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_INT.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_intClock.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_IRQ.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\Bootloadable.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\cybootloader.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\POT.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_1.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_1_PM.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_PM.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1_PM.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_PM.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\servo.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_1.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_1_PM.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_PM.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_BOOT.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_PM.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_rx.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_rx_PM.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SCBCLK.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SPI_UART.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_SPI_UART_INT.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_tx.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_tx_PM.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_UART.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_UART_BOOT.lst</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\ServoMotorTest.cyacd</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\ServoMotorTest.elf</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\ServoMotorTest.hex</v>
+<v>MotorTests\ServoMotorTest\CortexM0\ARM_GCC_541\Debug\ServoMotorTest.map</v>
+<v>MotorTests\ServoMotorTest\ServoMotorTest.gpdsc</v>
+<v>MotorTests\ServoMotorTest\ServoMotorTest.rpt</v>
+<v>MotorTests\ServoMotorTest\ServoMotorTest_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>MotorTests</v>
+<v>MotorTests\ArmDriver</v>
+<v>MotorTests\ArmDriver\CortexM0</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_INT.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_intClock.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_IRQ.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\Bootloadable.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cybootloader.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_1.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_1_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_2.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_2_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_3.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_3_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_4.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\POT_4_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_1_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_2.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_2_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_3.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_3_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_4.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\PWM_4_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_1.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_1_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_2.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_2_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_3.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_3_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_4.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\servo_4_PM.lst</v>
+<v>MotorTests\ArmDriver\CortexM0\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>MotorTests</v>
+<v>MotorTests\ArmDriver</v>
+<v>MotorTests\ArmDriver\PSoC 4 Architecture TRM</v>
+<v>MotorTests\ArmDriver\PSoC 4200 Family Datasheet</v>
+<v>MotorTests\ArmDriver\System Reference Guides</v>
+<v>MotorTests\ArmDriver\System Reference Guides\cy_boot_v5_70</v>
+<v>MotorTests\ArmDriver\System Reference Guides\cy_lfclk_v1_20</v>
+<v>MotorTests\ArmDriver\ADC_SAR_SEQ_P4_v2_50.pdf</v>
+<v>MotorTests\ArmDriver\Bootloadable_v1_60.pdf</v>
+<v>MotorTests\ArmDriver\cy_clock_v2_20.pdf</v>
+<v>MotorTests\ArmDriver\cy_pins_v2_20</v>
+<v>MotorTests\ArmDriver\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>MotorTests\ArmDriver\SCB_P4_v4_0.pdf</v>
+<v>MotorTests\ArmDriver\TCPWM_P4_v2_10</v>
+<v>MotorTests\ArmDriver\TCPWM_P4_v2_10\TCPWM_P4_v2_10.pdf</v>
+<v>MotorTests\ServoMotorTest</v>
+<v>MotorTests\ServoMotorTest\PSoC 4 Architecture TRM</v>
+<v>MotorTests\ServoMotorTest\PSoC 4200 Family Datasheet</v>
+<v>MotorTests\ServoMotorTest\System Reference Guides</v>
+<v>MotorTests\ServoMotorTest\System Reference Guides\cy_boot_v5_70</v>
+<v>MotorTests\ServoMotorTest\System Reference Guides\cy_lfclk_v1_20</v>
+<v>MotorTests\ServoMotorTest\ADC_SAR_SEQ_P4_v2_50.pdf</v>
+<v>MotorTests\ServoMotorTest\Bootloadable_v1_60.pdf</v>
+<v>MotorTests\ServoMotorTest\cy_clock_v2_20.pdf</v>
+<v>MotorTests\ServoMotorTest\cy_pins_v2_20</v>
+<v>MotorTests\ServoMotorTest\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>MotorTests\ServoMotorTest\SCB_P4_v4_0.pdf</v>
+<v>MotorTests\ServoMotorTest\TCPWM_P4_v2_10</v>
+<v>MotorTests\ServoMotorTest\TCPWM_P4_v2_10\TCPWM_P4_v2_10.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>MotorTests</v>
+<v>MotorTests\ArmDriver</v>
+<v>MotorTests\ArmDriver\PSoC 4 Architecture TRM</v>
+<v>MotorTests\ArmDriver\PSoC 4200 Family Datasheet</v>
+<v>MotorTests\ArmDriver\System Reference Guides</v>
+<v>MotorTests\ArmDriver\System Reference Guides\cy_boot_v5_70</v>
+<v>MotorTests\ArmDriver\System Reference Guides\cy_lfclk_v1_20</v>
+<v>MotorTests\ArmDriver\ADC_SAR_SEQ_P4_v2_50.pdf</v>
+<v>MotorTests\ArmDriver\Bootloadable_v1_60.pdf</v>
+<v>MotorTests\ArmDriver\cy_clock_v2_20.pdf</v>
+<v>MotorTests\ArmDriver\cy_pins_v2_20</v>
+<v>MotorTests\ArmDriver\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>MotorTests\ArmDriver\SCB_P4_v4_0.pdf</v>
+<v>MotorTests\ArmDriver\TCPWM_P4_v2_10</v>
+<v>MotorTests\ArmDriver\TCPWM_P4_v2_10\TCPWM_P4_v2_10.pdf</v>
+<v>MotorTests\ServoMotorTest</v>
+<v>MotorTests\ServoMotorTest\PSoC 4 Architecture TRM</v>
+<v>MotorTests\ServoMotorTest\PSoC 4200 Family Datasheet</v>
+<v>MotorTests\ServoMotorTest\System Reference Guides</v>
+<v>MotorTests\ServoMotorTest\System Reference Guides\cy_boot_v5_70</v>
+<v>MotorTests\ServoMotorTest\System Reference Guides\cy_lfclk_v1_20</v>
+<v>MotorTests\ServoMotorTest\ADC_SAR_SEQ_P4_v2_50.pdf</v>
+<v>MotorTests\ServoMotorTest\Bootloadable_v1_60.pdf</v>
+<v>MotorTests\ServoMotorTest\cy_clock_v2_20.pdf</v>
+<v>MotorTests\ServoMotorTest\cy_pins_v2_20</v>
+<v>MotorTests\ServoMotorTest\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>MotorTests\ServoMotorTest\SCB_P4_v4_0.pdf</v>
+<v>MotorTests\ServoMotorTest\TCPWM_P4_v2_10</v>
+<v>MotorTests\ServoMotorTest\TCPWM_P4_v2_10\TCPWM_P4_v2_10.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\ArmDriver.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\ArmDriver.cydsn\ArmDriver.cydwr" />
+<name v=".\ArmDriver.cydsn\main.c" />
+<name v=".\ArmDriver.cydsn\Generated_Source\PSoC4\ADC.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1572, 705" SelectedTabbedMdiWindow="54df65fe-d1af-4e5b-b64f-6d6a05c30905"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="5d9928ac-c0da-450e-bbf9-89e5d6d2e1ae" /><DocumentWindow Key="C:\Users\bhatt\Documents\PSoC Creator\MotorTests\ArmDriver.cydsn\TopDesign\TopDesign.cysch" Guid="e68c800c-1fb9-41f3-bcc5-0a8e170a4aa6" /><DocumentWindow Key="C:\Users\bhatt\Documents\PSoC Creator\MotorTests\ArmDriver.cydsn\ArmDriver.cydwr" Guid="806ad760-ea38-4a1a-a891-46f5953144ad" /><DocumentWindow Key="C:\Users\bhatt\Documents\PSoC Creator\MotorTests\ArmDriver.cydsn\main.c" Guid="54df65fe-d1af-4e5b-b64f-6d6a05c30905" /><DocumentWindow Key="C:\Users\bhatt\Documents\PSoC Creator\MotorTests\ArmDriver.cydsn\Generated_Source\PSoC4\ADC.c" Guid="6750fd2b-08f5-43e0-b3a1-07983249e339" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

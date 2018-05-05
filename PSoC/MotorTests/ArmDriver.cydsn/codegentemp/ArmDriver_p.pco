@@ -1,0 +1,23 @@
+dont_use_io iocell 3 2
+dont_use_io iocell 3 3
+set_io "\UART:rx(0)\" iocell 4 0
+set_location "\PWM_2:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 0
+set_io "servo_1(0)" iocell 1 0
+set_location "ClockBlock" m0s8clockblockcell -1 -1 0
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "\UART:tx(0)\" iocell 4 1
+set_io "servo_2(0)" iocell 3 0
+# Warning: unknown type "p4sarmuxcell"
+#set_location "\ADC:cy_psoc4_sarmux_8\" p4sarmuxcell -1 -1 -1 -1
+set_location "\PWM_1:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 2
+set_location "\ADC:IRQ\" interrupt -1 -1 14
+set_location "\UART:SCB\" m0s8scbcell -1 -1 0
+set_io "servo_4(0)" iocell 2 6
+set_location "\PWM_4:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 1
+set_io "servo_3(0)" iocell 1 2
+set_io "POT_1(0)" iocell 2 3
+set_io "POT_2(0)" iocell 2 2
+set_io "POT_3(0)" iocell 2 5
+set_io "POT_4(0)" iocell 2 7
+set_location "\ADC:cy_psoc4_sar\" p4sarcell -1 -1 0
+set_location "\PWM_3:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 3

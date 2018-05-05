@@ -1,0 +1,19 @@
+# ArmDriver
+# 2018-04-16 01:32:00Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "\UART:tx(0)\" iocell 4 1
+set_io "\UART:rx(0)\" iocell 4 0
+set_io "POT_1(0)" iocell 2 3
+set_io "servo_1(0)" iocell 1 0
+set_io "servo_2(0)" iocell 3 0
+set_io "POT_2(0)" iocell 2 2
+set_io "servo_3(0)" iocell 1 2
+set_io "servo_4(0)" iocell 2 6
+set_io "POT_3(0)" iocell 2 5
+set_io "POT_4(0)" iocell 2 7
+set_location "\ADC:cy_psoc4_sar\" p4sarcell -1 -1 0
