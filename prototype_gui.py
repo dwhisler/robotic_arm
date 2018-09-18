@@ -215,7 +215,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        self.ser = serial.Serial('COM3', 9600)
+        self.ser = serial.Serial('COM5', 9600)
 
         self.cal = [[115, 550], [115, 560], [106, 515], [110, 533], [108, 512], [125, 541], [110, 320]]
 
